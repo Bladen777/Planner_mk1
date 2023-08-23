@@ -1,0 +1,44 @@
+<!-- header -->
+<%- include("partials/header.ejs") %>
+
+<%- include("partials/list_left.ejs") %>
+
+<!-- list -->
+
+  <div class="list_box">
+    <div class="list_title">
+        <h2 contenteditable="true">LIST 1</h2>
+    </div>
+    <div class="list_content">
+        <ul>
+            <form action="/lists" method="post" class="form">
+                <li class="list_item new_list_item">
+                    <input type="text" name="new_item_input" placeholder="New Item"> 
+                    <input type="submit" value="+"> 
+                </li>
+            </form>
+
+            
+            <% if (locals.user_input){ %>
+                <% for(let i= 0; i<user_input.length;i++){ %>
+                    <form action="/lists" method="post" id="item_form<%= [i] %>" >
+                        <li class="list_item new_item">        
+                                <input type="checkbox">
+                                <input type="text" class="item_input" name="item_input" value="<%= user_input[i] %>">
+                                <input type="submit" name="delete" value="🗑"> 
+                        </li>
+                    </form>
+                <% } %>
+            <% } %>
+      
+        </ul>
+    </div>
+  </div>
+
+<!--right list box-->
+  
+<%- include("partials/list_right.ejs") %>
+
+  <!-- footer -->
+
+  <%- include("partials/footer.ejs") %>

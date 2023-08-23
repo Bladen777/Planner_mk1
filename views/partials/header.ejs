@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&family=Permanent+Marker&family=Roboto:ital,wght@0,400;1,100&display=swap" rel="stylesheet">  <title>Planner</title>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+        <img  src="https://www.svgrepo.com/show/67318/planning.svg" alt="list logo" height="100%">
+    </div>
+
+    <div class="dropdown">
+      <form action="/lists" method="post" class="form">
+        <button type="submit"><h3>List 1</h3></button>
+        </form>
+    </div>
+
+    <div class="work">
+      <form action="/lists/work" method="post" class="form">
+      <button type="submit"><h3>Work</h3></button>
+      </form>
+    </div>
+
+      
+    <div class="new_list">
+   
+      <button type="submit"><h3>New <br> List</h3></button>
+      
+    </div> 
+
+  </div>
+
+  <!--Opening of grid-->
+  <div class="grid_container">
+    <div class="date_container">
+       <h1><%= date %></h1>
+    </div>
+   
+</body>
+</html>
